@@ -471,7 +471,7 @@ $.BootstrapTable = class extends $.BootstrapTable {
     const icon = this.options.showButtonIcons ? this.options.filterControlVisible ? this.options.icons.filterControlSwitchHide : this.options.icons.filterControlSwitchShow : ''
     const text = this.options.showButtonText ? this.options.filterControlVisible ? this.options.formatFilterControlSwitchHide() : this.options.formatFilterControlSwitchShow() : ''
 
-    this.$toolbar.find('>.columns').find('.filter-control-switch')
+    this.$toolbar.find('>.columns').find('.btn[name="filterControlSwitch"]')
       .html(`${Utils.sprintf(this.constants.html.icon, this.options.iconsPrefix, icon) } ${ text}`)
   }
 }

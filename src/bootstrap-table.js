@@ -1903,9 +1903,9 @@ class BootstrapTable {
       }
     }
 
-    if (!(Utils.isEmptyObject(this.filterColumnsPartial))) {
+    //if (!(Utils.isEmptyObject(this.filterColumnsPartial))) {
       params.filter = JSON.stringify(this.filterColumnsPartial, null)
-    }
+    //}
 
     $.extend(params, query || {})
 
