@@ -12,13 +12,13 @@
 
 <title>Webpack · Bootstrap Table</title>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><!-- Documentation extras -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"><!-- Documentation extras -->
 
-<link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
 
 
-<link href="/assets/css/docs.min.css" rel="stylesheet">
-<link href="/assets/css/style.css?m=7" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/docs.min.css">
+<link rel="stylesheet" href="/assets/css/style.css?m=9">
 
 <!-- Favicons -->
 <link rel="icon" href="/favicon.png">
@@ -89,13 +89,25 @@
   <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
     <li class="nav-item dropdown">
       <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        v1.18.2
+        v1.23.5
       </a>
       <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions">
-        <a class="dropdown-item active" href="/">Latest (1.18.2)</a>
+        <a class="dropdown-item active" href="/">Latest (1.23.5)</a>
+        
+        <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.21.4/" target="_blank">v1.21.4</a>
+        
+        <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.20.2/" target="_blank">v1.20.2</a>
+        
+        <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.19.1/" target="_blank">v1.19.1</a>
+        
+        <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.18.3/" target="_blank">v1.18.3</a>
+        
         <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.17.1/" target="_blank">v1.17.1</a>
+        
         <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.16.0/" target="_blank">v1.16.0</a>
+        
         <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.15.5/" target="_blank">v1.15.5</a>
+        
       </div>
     </li>
     <li class="nav-item">
@@ -209,6 +221,10 @@
             Copy Rows
           </a>
         </li><li>
+          <a href="/docs/extensions/custom-view/">
+            Custom View
+          </a>
+        </li><li>
           <a href="/docs/extensions/defer-url/">
             Defer URL
           </a>
@@ -308,6 +324,12 @@
           </a>
         </li></ul>
   </div><div class="bd-toc-item">
+    <a class="bd-toc-link" href="/docs/online-editor/">
+      Online Editor
+    </a>
+
+    <ul class="nav bd-sidenav"></ul>
+  </div><div class="bd-toc-item">
     <a class="bd-toc-link" href="/docs/faq/">
       FAQ
     </a>
@@ -351,7 +373,18 @@
         
 
         <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content vuejs" role="main">
-          <h1 class="bd-title" id="content">Webpack</h1>
+          <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+            <a class="btn btn-sm btn-bd-light mb-2 mb-md-0"
+              
+              href="https://github.com/wenzhixin/bootstrap-table/blob/develop/site/docs/vuejs/webpack.md"
+              
+              title="View and edit this file on GitHub" target="_blank" rel="noopener">
+              View on GitHub
+            </a>
+            <h1 class="bd-title" id="content">
+              Webpack
+            </h1>
+          </div>
           <p class="bd-lead">Learn how to use Bootstrap Table Vue Component in your project using webpack.</p>
           <div id="gg"></div>
 
@@ -359,19 +392,19 @@
 
 <p>Import Bootstrap Table’s JavaScript by adding this line to your app’s entry point (usually <code class="highlighter-rouge">index.js</code> or <code class="highlighter-rouge">app.js</code>):</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="k">import</span> <span class="dl">'</span><span class="s1">bootstrap-table/dist/bootstrap-table.js</span><span class="dl">'</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="k">import</span> <span class="dl">'</span><span class="s1">bootstrap-table</span><span class="dl">'</span></code></pre></figure>
 
 <p>Of course, you can also import themes, locales or extensions you need:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// import theme</span>
-<span class="k">import</span> <span class="dl">'</span><span class="s1">bootstrap-table/dist/themes/materialize/bootstrap-table-materialize.js</span><span class="dl">'</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">bootstrap-table/dist/themes/materialize/bootstrap-table-materialize.min.js</span><span class="dl">'</span>
 
 <span class="c1">// import locale</span>
-<span class="k">import</span> <span class="dl">'</span><span class="s1">bootstrap-table/dist/locale/bootstrap-table-zh-CN.js</span><span class="dl">'</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">bootstrap-table/dist/locale/bootstrap-table-zh-CN.min.js</span><span class="dl">'</span>
 
 <span class="c1">// import extension and dependencies</span>
 <span class="k">import</span> <span class="dl">'</span><span class="s1">tableexport.jquery.plugin</span><span class="dl">'</span>
-<span class="k">import</span> <span class="dl">'</span><span class="s1">bootstrap-table/dist/extensions/export/bootstrap-table-export.js</span><span class="dl">'</span></code></pre></figure>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">bootstrap-table/dist/extensions/export/bootstrap-table-export.min.js</span><span class="dl">'</span></code></pre></figure>
 
 <p>By default, Bootstrap Table is dependent on <a href="https://jquery.com/">jQuery</a>, <a href="https://getbootstrap.com">Bootstrap</a> and <a href="https://popper.js.org/">Popper</a>, these are defined as peerDependencies, this means that you will have to make sure to add both of them to your <code class="highlighter-rouge">package.json</code> using <code class="highlighter-rouge">npm install --save jquery bootstrap popper.js</code>.</p>
 
@@ -400,7 +433,7 @@
 <span class="nt">&lt;/</span><span class="k">template</span><span class="nt">&gt;</span>
 
 <span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
-<span class="k">import</span> <span class="nx">BootstrapTable</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">bootstrap-table/dist/bootstrap-table-vue.esm.js</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">BootstrapTable</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">bootstrap-table/dist/bootstrap-table-vue.js</span><span class="dl">'</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
   <span class="na">components</span><span class="p">:</span> <span class="p">{</span>
@@ -528,9 +561,9 @@
       </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script><script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 <script>
 $(function () {

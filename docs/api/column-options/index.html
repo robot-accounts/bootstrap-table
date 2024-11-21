@@ -12,13 +12,13 @@
 
 <title>Column Options · Bootstrap Table</title>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><!-- Documentation extras -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"><!-- Documentation extras -->
 
-<link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
 
 
-<link href="/assets/css/docs.min.css" rel="stylesheet">
-<link href="/assets/css/style.css?m=7" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/docs.min.css">
+<link rel="stylesheet" href="/assets/css/style.css?m=9">
 
 <!-- Favicons -->
 <link rel="icon" href="/favicon.png">
@@ -89,13 +89,25 @@
   <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
     <li class="nav-item dropdown">
       <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        v1.18.2
+        v1.23.5
       </a>
       <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions">
-        <a class="dropdown-item active" href="/">Latest (1.18.2)</a>
+        <a class="dropdown-item active" href="/">Latest (1.23.5)</a>
+        
+        <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.21.4/" target="_blank">v1.21.4</a>
+        
+        <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.20.2/" target="_blank">v1.20.2</a>
+        
+        <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.19.1/" target="_blank">v1.19.1</a>
+        
+        <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.18.3/" target="_blank">v1.18.3</a>
+        
         <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.17.1/" target="_blank">v1.17.1</a>
+        
         <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.16.0/" target="_blank">v1.16.0</a>
+        
         <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.15.5/" target="_blank">v1.15.5</a>
+        
       </div>
     </li>
     <li class="nav-item">
@@ -209,6 +221,10 @@
             Copy Rows
           </a>
         </li><li>
+          <a href="/docs/extensions/custom-view/">
+            Custom View
+          </a>
+        </li><li>
           <a href="/docs/extensions/defer-url/">
             Defer URL
           </a>
@@ -308,6 +324,12 @@
           </a>
         </li></ul>
   </div><div class="bd-toc-item">
+    <a class="bd-toc-link" href="/docs/online-editor/">
+      Online Editor
+    </a>
+
+    <ul class="nav bd-sidenav"></ul>
+  </div><div class="bd-toc-item">
     <a class="bd-toc-link" href="/docs/faq/">
       FAQ
     </a>
@@ -356,6 +378,7 @@
 <li class="toc-entry toc-h2"><a href="#falign">falign</a></li>
 <li class="toc-entry toc-h2"><a href="#field">field</a></li>
 <li class="toc-entry toc-h2"><a href="#footerformatter">footerFormatter</a></li>
+<li class="toc-entry toc-h2"><a href="#footerstyle">footerStyle</a></li>
 <li class="toc-entry toc-h2"><a href="#formatter">formatter</a></li>
 <li class="toc-entry toc-h2"><a href="#halign">halign</a></li>
 <li class="toc-entry toc-h2"><a href="#order">order</a></li>
@@ -369,6 +392,7 @@
 <li class="toc-entry toc-h2"><a href="#sorter">sorter</a></li>
 <li class="toc-entry toc-h2"><a href="#sortname">sortName</a></li>
 <li class="toc-entry toc-h2"><a href="#switchable">switchable</a></li>
+<li class="toc-entry toc-h2"><a href="#switchablelabel">switchableLabel</a></li>
 <li class="toc-entry toc-h2"><a href="#title">title</a></li>
 <li class="toc-entry toc-h2"><a href="#titletooltip">titleTooltip</a></li>
 <li class="toc-entry toc-h2"><a href="#valign">valign</a></li>
@@ -380,7 +404,18 @@
         
 
         <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content api" role="main">
-          <h1 class="bd-title" id="content">Column Options</h1>
+          <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+            <a class="btn btn-sm btn-bd-light mb-2 mb-md-0"
+              
+              href="https://github.com/wenzhixin/bootstrap-table/blob/develop/site/docs/api/column-options.md"
+              
+              title="View and edit this file on GitHub" target="_blank" rel="noopener">
+              View on GitHub
+            </a>
+            <h1 class="bd-title" id="content">
+              Column Options
+            </h1>
+          </div>
           <p class="bd-lead">The column options API of Bootstrap Table.</p>
           <div id="gg"></div>
 
@@ -420,7 +455,7 @@
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Set <code class="highlighter-rouge">false</code> to hide the columns item in card view state.</p>
+    <p>Set <code class="highlighter-rouge">false</code> to hide the columns item in the card view state.</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">true</code></p>
@@ -473,10 +508,10 @@
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Set <code class="highlighter-rouge">true</code> to show a checkbox. The checkbox column has fixed width.</p>
+    <p>Set <code class="highlighter-rouge">true</code> to show a checkbox. The checkbox column has a fixed width.</p>
 
-    <p>If a value is given the Checkbox is automatically checked.
-Its also possible to check/uncheck the checkbox by use an formatter (return <code class="highlighter-rouge">true</code> to check, return <code class="highlighter-rouge">false</code> to uncheck).</p>
+    <p>If a value is given, the checkbox is automatically checked.
+Its also possible to check/uncheck the checkbox by using a formatter (return <code class="highlighter-rouge">true</code> to check, return <code class="highlighter-rouge">false</code> to uncheck).</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">false</code></p>
@@ -498,7 +533,7 @@ Its also possible to check/uncheck the checkbox by use an formatter (return <cod
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Set <code class="highlighter-rouge">false</code> to disable the the checkboxes/radioboxes.</p>
+    <p>Set <code class="highlighter-rouge">false</code> to disable the checkboxes/radio boxes.</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">true</code></p>
@@ -542,10 +577,10 @@ Its also possible to check/uncheck the checkbox by use an formatter (return <cod
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Set <code class="highlighter-rouge">true</code> to select checkbox or radiobox when clicking rows.</p>
+    <p>Set <code class="highlighter-rouge">true</code> to select the checkbox or radio box when clicking rows.</p>
   </li>
   <li>
-    <p><strong>Default:</strong> <code class="highlighter-rouge">false</code></p>
+    <p><strong>Default:</strong> <code class="highlighter-rouge">true</code></p>
   </li>
   <li>
     <p><strong>Example:</strong> <a href="https://examples.bootstrap-table.com/#column-options/click-to-select.html">Click to Select</a></p>
@@ -586,7 +621,7 @@ Its also possible to check/uncheck the checkbox by use an formatter (return <cod
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Format your detail view when <code class="highlighter-rouge">detailView</code> and <code class="highlighter-rouge">detailViewByClick</code> is set to <code class="highlighter-rouge">true</code>. Return a <code class="highlighter-rouge">String</code> and it will be appended into the detail view cell, optionally render the element directly using the third parameter which is a jQuery element of the target cell.</p>
+    <p>Format your detail view when <code class="highlighter-rouge">detailView</code> and <code class="highlighter-rouge">detailViewByClick</code> is set to <code class="highlighter-rouge">true</code>. Return a <code class="highlighter-rouge">String</code> and it will be appended into the detail view cell, optionally render the element directly using the third parameter, which is a jQuery element of the target cell.</p>
 
     <p>Fallback is the detail-formatter of the table.</p>
   </li>
@@ -613,7 +648,7 @@ Its also possible to check/uncheck the checkbox by use an formatter (return <cod
     <p>Escapes a string for insertion into HTML, replacing &amp;, &lt;, &gt;, “, `, and ‘ characters.</p>
   </li>
   <li>
-    <p><strong>Default:</strong> <code class="highlighter-rouge">false</code></p>
+    <p><strong>Default:</strong> <code class="highlighter-rouge">undefined</code></p>
   </li>
   <li>
     <p><strong>Example:</strong> <a href="https://examples.bootstrap-table.com/#column-options/escape.html">Column Escape</a></p>
@@ -632,7 +667,7 @@ Its also possible to check/uncheck the checkbox by use an formatter (return <cod
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>The cell events listener when you use formatter function, take four parameters:</p>
+    <p>The cell events listener, when you use formatter function, take four parameters:</p>
 
     <ul>
       <li><code class="highlighter-rouge">event</code>: the jQuery event.</li>
@@ -718,15 +753,54 @@ Its also possible to check/uncheck the checkbox by use an formatter (return <cod
       <li><code class="highlighter-rouge">value</code>: If footer data is set, the value of the footer column.</li>
     </ul>
 
-    <p>the function should return a string with the text to show in the footer cell.</p>
+    <p>The expected return data type is <code class="highlighter-rouge">jQuery</code>, <code class="highlighter-rouge">String</code> or <code class="highlighter-rouge">HTMLElement</code>. Other types will be forced to the <code class="highlighter-rouge">String</code> type.</p>
 
-    <p>If you fetch data from a server and tries to set the footer value from the server response, please use the <code class="highlighter-rouge">footerField</code> Option.</p>
+    <p>If you fetch data from a server and set the footer value from the server response, please use the <code class="highlighter-rouge">footerField</code> Option.</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">undefined</code></p>
   </li>
   <li>
     <p><strong>Example:</strong> <a href="https://examples.bootstrap-table.com/#column-options/footer-formatter.html">Footer Formatter</a></p>
+  </li>
+</ul>
+
+<h2 id="footerstyle">footerStyle</h2>
+
+<ul>
+  <li>
+    <p><strong>Attribute:</strong> <code class="highlighter-rouge">data-footer-style</code></p>
+  </li>
+  <li>
+    <p><strong>Type:</strong> <code class="highlighter-rouge">Function</code></p>
+  </li>
+  <li>
+    <p><strong>Detail:</strong></p>
+
+    <p>The footer style formatter function, takes one parameter:</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">column</code>: the column object.</li>
+    </ul>
+
+    <p>Support <code class="highlighter-rouge">classes</code> or <code class="highlighter-rouge">css</code>. Example usage:</p>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">function</span> <span class="nx">footerStyle</span><span class="p">(</span><span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">css</span><span class="p">:</span> <span class="p">{</span> <span class="dl">'</span><span class="s1">font-weight</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">normal</span><span class="dl">'</span> <span class="p">},</span>
+      <span class="na">classes</span><span class="p">:</span> <span class="dl">'</span><span class="s1">my-class</span><span class="dl">'</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  </code></pre></figure>
+
+<ul>
+  <li>
+    <p><strong>Default:</strong> <code class="highlighter-rouge">{}</code></p>
+  </li>
+  <li>
+    <p><strong>Example:</strong> <a href="https://examples.bootstrap-table.com/#options/footer-style.html">Footer Style</a></p>
   </li>
 </ul>
 
@@ -752,6 +826,8 @@ Its also possible to check/uncheck the checkbox by use an formatter (return <cod
       <li><code class="highlighter-rouge">index</code>: the row index.</li>
       <li><code class="highlighter-rouge">field</code>: the row field.</li>
     </ul>
+
+    <p>The expected return data type is <code class="highlighter-rouge">jQuery</code>, <code class="highlighter-rouge">String</code> or <code class="highlighter-rouge">HTMLElement</code>. Other types will be forced to the <code class="highlighter-rouge">String</code> type.</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">undefined</code></p>
@@ -817,10 +893,10 @@ Its also possible to check/uncheck the checkbox by use an formatter (return <cod
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Set <code class="highlighter-rouge">true</code> to show a radio. The radio column has fixed width.</p>
+    <p>Set <code class="highlighter-rouge">true</code> to show a radio. The radio column has a fixed width.</p>
 
-    <p>If a value is given the Checkbox is automatically checked.
-Its also possible to check/uncheck the radio by use an formatter (return <code class="highlighter-rouge">true</code> to check, return <code class="highlighter-rouge">false</code> to uncheck).</p>
+    <p>If a value is given, the checkbox is automatically checked.
+Its also possible to check/uncheck the radio by using a formatter (return <code class="highlighter-rouge">true</code> to check, return <code class="highlighter-rouge">false</code> to uncheck).</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">false</code></p>
@@ -886,7 +962,7 @@ Its also possible to check/uncheck the radio by use an formatter (return <code c
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Set <code class="highlighter-rouge">true</code> to search use formatted data.</p>
+    <p>Set <code class="highlighter-rouge">true</code> to search using formatted data.</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">true</code></p>
@@ -974,7 +1050,7 @@ Its also possible to check/uncheck the radio by use an formatter (return <code c
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>The custom field sort function that used to do local sorting, take four parameters:</p>
+    <p>The custom field sort function that is used to do local sorting, take four parameters:</p>
 
     <ul>
       <li><code class="highlighter-rouge">fieldA</code>: the first field value.</li>
@@ -1037,6 +1113,28 @@ Its also possible to check/uncheck the radio by use an formatter (return <code c
   </li>
 </ul>
 
+<h2 id="switchablelabel">switchableLabel</h2>
+
+<ul>
+  <li>
+    <p><strong>Attribute:</strong> <code class="highlighter-rouge">data-switchable-label</code></p>
+  </li>
+  <li>
+    <p><strong>Type:</strong> <code class="highlighter-rouge">String</code></p>
+  </li>
+  <li>
+    <p><strong>Detail:</strong></p>
+
+    <p>The label of the switchable column in the dropdown. If not specified uses the column title.</p>
+  </li>
+  <li>
+    <p><strong>Default:</strong> <code class="highlighter-rouge">undefined</code></p>
+  </li>
+  <li>
+    <p><strong>Example:</strong> <a href="https://examples.bootstrap-table.com/#column-options/switchable.html">Column Switchable</a></p>
+  </li>
+</ul>
+
 <h2 id="title">title</h2>
 
 <ul>
@@ -1071,7 +1169,7 @@ Its also possible to check/uncheck the radio by use an formatter (return <code c
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>The column title tooltip text. This option also support the title HTML attribute.</p>
+    <p>The column title tooltip text. This option also supports the title HTML attribute.</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">undefined</code></p>
@@ -1137,7 +1235,7 @@ Its also possible to check/uncheck the radio by use an formatter (return <code c
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>The width of column. If not defined, the width will auto expand to fit its contents. Though if the table is left responsive and sized too small this <code class="highlighter-rouge">'width'</code> might be ignored (use min/max-width via class or such then). The default used Unit is ‘px’, use <code class="highlighter-rouge">widthUnit</code> to change it!</p>
+    <p>The width of the column. If not defined, the width will auto expand to fit its contents. Though if the table is left responsive and sized too small, this <code class="highlighter-rouge">'width'</code> might be ignored (use min/max-width via class or such then). The default used unit is ‘px’. Use <code class="highlighter-rouge">widthUnit</code> to change it!</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">undefined</code></p>
@@ -1173,9 +1271,9 @@ Its also possible to check/uncheck the radio by use an formatter (return <code c
       </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script><script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 <script>
 $(function () {

@@ -12,13 +12,13 @@
 
 <title>Events · Bootstrap Table</title>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><!-- Documentation extras -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"><!-- Documentation extras -->
 
-<link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
 
 
-<link href="/assets/css/docs.min.css" rel="stylesheet">
-<link href="/assets/css/style.css?m=7" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/docs.min.css">
+<link rel="stylesheet" href="/assets/css/style.css?m=9">
 
 <!-- Favicons -->
 <link rel="icon" href="/favicon.png">
@@ -89,13 +89,25 @@
   <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
     <li class="nav-item dropdown">
       <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        v1.18.2
+        v1.23.5
       </a>
       <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions">
-        <a class="dropdown-item active" href="/">Latest (1.18.2)</a>
+        <a class="dropdown-item active" href="/">Latest (1.23.5)</a>
+        
+        <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.21.4/" target="_blank">v1.21.4</a>
+        
+        <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.20.2/" target="_blank">v1.20.2</a>
+        
+        <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.19.1/" target="_blank">v1.19.1</a>
+        
+        <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.18.3/" target="_blank">v1.18.3</a>
+        
         <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.17.1/" target="_blank">v1.17.1</a>
+        
         <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.16.0/" target="_blank">v1.16.0</a>
+        
         <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.15.5/" target="_blank">v1.15.5</a>
+        
       </div>
     </li>
     <li class="nav-item">
@@ -209,6 +221,10 @@
             Copy Rows
           </a>
         </li><li>
+          <a href="/docs/extensions/custom-view/">
+            Custom View
+          </a>
+        </li><li>
           <a href="/docs/extensions/defer-url/">
             Defer URL
           </a>
@@ -308,6 +324,12 @@
           </a>
         </li></ul>
   </div><div class="bd-toc-item">
+    <a class="bd-toc-link" href="/docs/online-editor/">
+      Online Editor
+    </a>
+
+    <ul class="nav bd-sidenav"></ul>
+  </div><div class="bd-toc-item">
     <a class="bd-toc-link" href="/docs/faq/">
       FAQ
     </a>
@@ -350,6 +372,7 @@
 <li class="toc-entry toc-h2"><a href="#onclickrow">onClickRow</a></li>
 <li class="toc-entry toc-h2"><a href="#oncollapserow">onCollapseRow</a></li>
 <li class="toc-entry toc-h2"><a href="#oncolumnswitch">onColumnSwitch</a></li>
+<li class="toc-entry toc-h2"><a href="#oncolumnswitchall">onColumnSwitchAll</a></li>
 <li class="toc-entry toc-h2"><a href="#ondblclickcell">onDblClickCell</a></li>
 <li class="toc-entry toc-h2"><a href="#ondblclickrow">onDblClickRow</a></li>
 <li class="toc-entry toc-h2"><a href="#onexpandrow">onExpandRow</a></li>
@@ -367,27 +390,40 @@
 <li class="toc-entry toc-h2"><a href="#onsearch">onSearch</a></li>
 <li class="toc-entry toc-h2"><a href="#onsort">onSort</a></li>
 <li class="toc-entry toc-h2"><a href="#ontoggle">onToggle</a></li>
+<li class="toc-entry toc-h2"><a href="#ontogglepagination">onTogglePagination</a></li>
 <li class="toc-entry toc-h2"><a href="#onuncheck">onUncheck</a></li>
 <li class="toc-entry toc-h2"><a href="#onuncheckall">onUncheckAll</a></li>
 <li class="toc-entry toc-h2"><a href="#onunchecksome">onUncheckSome</a></li>
+<li class="toc-entry toc-h2"><a href="#onvirtualscroll">onVirtualScroll</a></li>
 </ul>
           </div>
         
 
         <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content api" role="main">
-          <h1 class="bd-title" id="content">Events</h1>
+          <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+            <a class="btn btn-sm btn-bd-light mb-2 mb-md-0"
+              
+              href="https://github.com/wenzhixin/bootstrap-table/blob/develop/site/docs/api/events.md"
+              
+              title="View and edit this file on GitHub" target="_blank" rel="noopener">
+              View on GitHub
+            </a>
+            <h1 class="bd-title" id="content">
+              Events
+            </h1>
+          </div>
           <p class="bd-lead">The Events API of Bootstrap Table.</p>
           <div id="gg"></div>
 
-          <p>Events can be binded in two ways:</p>
+          <p>Events can be bound in two ways:</p>
 <ul>
   <li>via the option object</li>
   <li>via jquery event handler</li>
 </ul>
 
-<p>Binding via the option object:</p>
+<p>Binding via the options object:</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html">// Here you can expect to have as last parameter the boostrap-table object
+<figure class="highlight"><pre><code class="language-html" data-lang="html">// Here, you can expect to have as the last parameter the bootstrap-table object
 
 $('#table').bootstrapTable({
   onEventName: function (arg1, arg2, ...) {
@@ -397,13 +433,13 @@ $('#table').bootstrapTable({
 
 <p>Binding via the jquery event handler:</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html">// Here you can expect to have in the 'e' variable the sender property which is the boostrap-table object
+<figure class="highlight"><pre><code class="language-html" data-lang="html">// Here, you can expect to have in the 'e' variable the sender property, which is the bootstrap-table object
 
 $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   // ...
 })</code></pre></figure>
 
-<p><em>Hint: if you use the jquery event handler, make sure to bind the event listener before the event was executed!</em></p>
+<p><em>Hint: if you use the jquery event handler, make sure to bind the event listener before the event is executed!</em></p>
 
 <h2 id="onall">onAll</h2>
 
@@ -417,7 +453,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when all events trigger, the parameters contain:</p>
+    <p>It fires when any event triggers. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">name</code>: the event name,</li>
@@ -438,7 +474,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when user check a row, the parameters contain:</p>
+    <p>It fires when the user checks a row. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">row</code>: the record corresponding to the clicked row.</li>
@@ -459,7 +495,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when user check all rows, the parameters contain:</p>
+    <p>It fires when the user checks all rows. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">rowsAfter</code>: array of records of the now checked rows.</li>
@@ -480,7 +516,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when user check some rows, the parameters contain:</p>
+    <p>It fires when the user checks some rows. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">rows</code>: array of records corresponding to newly checked rows.</li>
@@ -500,7 +536,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when user click a cell, the parameters contain:</p>
+    <p>It fires when the user clicks a cell. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">field</code>: the field name corresponding to the clicked cell.</li>
@@ -523,7 +559,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when user click a row, the parameters contain:</p>
+    <p>It fires when the user clicks a row. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">row</code>: the record corresponding to the clicked row.</li>
@@ -545,7 +581,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when click the detail icon to collapse the detail view, the parameters contain:</p>
+    <p>It fires when you click the detail icon to collapse the detail view. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">index</code>: the index of the collapsed row.</li>
@@ -567,10 +603,30 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when switch the column visible (<a href="/docs/api/table-options/#showcolumns">showColumns</a>), the parameters contain:</p>
+    <p>It fires when switch the column visible (<a href="/docs/api/table-options/#showcolumns">showColumns</a>). The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">field</code>: the field name corresponding to the switch column.</li>
+      <li><code class="highlighter-rouge">checked</code>: the checked state of the column.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="oncolumnswitchall">onColumnSwitchAll</h2>
+
+<ul>
+  <li>
+    <p><strong>jQuery Event:</strong> <code class="highlighter-rouge">column-switch-all.bs.table</code></p>
+  </li>
+  <li>
+    <p><strong>Parameter:</strong> <code class="highlighter-rouge">checked</code></p>
+  </li>
+  <li>
+    <p><strong>Detail:</strong></p>
+
+    <p>It fires when toggle all columns. The parameters contain:</p>
+
+    <ul>
       <li><code class="highlighter-rouge">checked</code>: the checked state of the column.</li>
     </ul>
   </li>
@@ -588,7 +644,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when user double click a cell, the parameters contain:</p>
+    <p>It fires when the user double click a cell. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">field</code>: the field name corresponding to the clicked cell.</li>
@@ -611,7 +667,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when user double click a row, the parameters contain:</p>
+    <p>It fires when the user doubles click a row. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">row</code>: the record corresponding to the clicked row.</li>
@@ -633,12 +689,12 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when click the detail icon to expand the detail view, the parameters contain:</p>
+    <p>It fires when you click the detail icon to expand the detail view. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">index</code>: the index of the expanded row.</li>
       <li><code class="highlighter-rouge">row</code>: the record corresponding to the expanded row.</li>
-      <li><code class="highlighter-rouge">$detail</code>: the DOM element of the detail <code class="highlighter-rouge">div</code> after current <code class="highlighter-rouge">tr</code> element, you can use jQuery methods to custom the detail views.</li>
+      <li><code class="highlighter-rouge">$detail</code>: the DOM element of the detail <code class="highlighter-rouge">div</code> after the current <code class="highlighter-rouge">tr</code> element, you can use jQuery methods to custom the detail views.</li>
     </ul>
   </li>
 </ul>
@@ -655,7 +711,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when some errors occur to load remote data, the parameters contain:</p>
+    <p>It fires when some errors occur to load remote data. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">status</code>: the status code of <code class="highlighter-rouge">jqXHR</code>.</li>
@@ -676,10 +732,10 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when remote data is loaded successfully, the parameters contain:</p>
+    <p>It fires when remote data is loaded successfully. The parameters contain:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">data</code>: the remote data.</li>
+      <li><code class="highlighter-rouge">data</code>: the remote data loaded into the table. (Note: this data cannot be modified once it’s loaded into the table. If you need to process received data before using it in the table, write your custom <a href="/docs/api/table-options/#responsehandler">responseHandler</a> instead.)</li>
       <li><code class="highlighter-rouge">status</code>: the status code of <code class="highlighter-rouge">jqXHR</code>.</li>
       <li><code class="highlighter-rouge">jqXHR</code>: jqXHR object, which is a super set of the XMLHTTPRequest object. For more information, see the <a href="http://api.jquery.com/Types/#jqXHR">jqXHR Type</a>.</li>
     </ul>
@@ -698,7 +754,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when change the page number or page size, the parameters contain:</p>
+    <p>It fires when changing the page number or page size. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">number</code>: the page number.</li>
@@ -719,7 +775,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires after the table body is rendered and available in the DOM, the parameters contain:</p>
+    <p>It fires after the table body are rendered and available in the DOM. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">data</code>: the rendered data.</li>
@@ -739,7 +795,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires after the footer is rendered and available in the DOM, the parameters contain:</p>
+    <p>It fires after the footer are rendered and available in the DOM. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">$tableFooter</code>: the DOM element of the footer.</li>
@@ -759,7 +815,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires after the table header is rendered and available in the DOM.</p>
+    <p>It fires after the table header is rendered and available in the DOM.</p>
   </li>
 </ul>
 
@@ -775,7 +831,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires before the table body is rendered, the parameters contain:</p>
+    <p>It fires before the table body are rendered. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">data</code>: the rendered data.</li>
@@ -795,7 +851,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires after the click the refresh button, the parameters contain:</p>
+    <p>It fires after the click of the refresh button. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">params</code>: the additional parameters request to the server.</li>
@@ -815,7 +871,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires after refresh the options and before destroy and init the table, the parameters contain:</p>
+    <p>It fires after refreshing the options, and before destroying and init the table. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">options</code>: the table options object.</li>
@@ -835,7 +891,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when reset view of the table.</p>
+    <p>It fires when resetting the view of the table.</p>
   </li>
 </ul>
 
@@ -851,7 +907,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when table body scroll.</p>
+    <p>It fires when the table body scroll.</p>
     <h2 id="onsearch">onSearch</h2>
   </li>
   <li>
@@ -863,7 +919,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when search the table, the parameters contain:</p>
+    <p>It fires when searching the table. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">text</code>: the text of the search input.</li>
@@ -883,7 +939,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when user sort a column, the parameters contain:</p>
+    <p>It fires when the user sort a column. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">name</code>: the sort column field name.</li>
@@ -904,10 +960,30 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when toggle the view of table, the parameters contain:</p>
+    <p>It fires when toggling the view of the table. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">cardView</code>: the cardView state of the table.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="ontogglepagination">onTogglePagination</h2>
+
+<ul>
+  <li>
+    <p><strong>jQuery Event:</strong> <code class="highlighter-rouge">toggle-pagination.bs.table</code></p>
+  </li>
+  <li>
+    <p><strong>Parameter:</strong> <code class="highlighter-rouge">state</code></p>
+  </li>
+  <li>
+    <p><strong>Detail:</strong></p>
+
+    <p>It fires when the pagination is toggled:</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">state</code>: the new pagination state (<code class="highlighter-rouge">true</code>-&gt; Pagination is enabled, <code class="highlighter-rouge">false</code> -&gt; Pagination is disabled )</li>
     </ul>
   </li>
 </ul>
@@ -924,7 +1000,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when user uncheck a row, the parameters contain:</p>
+    <p>It fires when the user unchecks a row. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">row</code>: the record corresponding to the clicked row.</li>
@@ -945,7 +1021,7 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when user uncheck all rows, the parameters contain:</p>
+    <p>It fires when the user unchecks all rows. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">rowsAfter</code>: array of records of the now checked rows.</li>
@@ -966,10 +1042,31 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Fires when user uncheck some rows, the parameters contain:</p>
+    <p>It fires when the user unchecks some rows. The parameters contain:</p>
 
     <ul>
       <li><code class="highlighter-rouge">rows</code>: array of records corresponding to previously checked rows.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="onvirtualscroll">onVirtualScroll</h2>
+
+<ul>
+  <li>
+    <p><strong>jQuery Event:</strong> <code class="highlighter-rouge">virtual-scroll.bs.table</code></p>
+  </li>
+  <li>
+    <p><strong>Parameter:</strong> <code class="highlighter-rouge">startIndex, endIndex</code></p>
+  </li>
+  <li>
+    <p><strong>Detail:</strong></p>
+
+    <p>It fires when the user scrolls the virtual scroll. The parameters contain:</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">startIndex</code>: the start row index of the virtual scroll.</li>
+      <li><code class="highlighter-rouge">endIndex</code>: the end row index of the virtual scroll.</li>
     </ul>
   </li>
 </ul>
@@ -978,9 +1075,9 @@ $('#table').on('event-name.bs.table', function (e, arg1, arg2, ...) {
       </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script><script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 <script>
 $(function () {

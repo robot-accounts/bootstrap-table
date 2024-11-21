@@ -12,13 +12,13 @@
 
 <title>Table Filter Control · Bootstrap Table</title>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><!-- Documentation extras -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"><!-- Documentation extras -->
 
-<link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
 
 
-<link href="/assets/css/docs.min.css" rel="stylesheet">
-<link href="/assets/css/style.css?m=7" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/docs.min.css">
+<link rel="stylesheet" href="/assets/css/style.css?m=9">
 
 <!-- Favicons -->
 <link rel="icon" href="/favicon.png">
@@ -89,13 +89,25 @@
   <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
     <li class="nav-item dropdown">
       <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        v1.18.2
+        v1.23.5
       </a>
       <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions">
-        <a class="dropdown-item active" href="/">Latest (1.18.2)</a>
+        <a class="dropdown-item active" href="/">Latest (1.23.5)</a>
+        
+        <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.21.4/" target="_blank">v1.21.4</a>
+        
+        <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.20.2/" target="_blank">v1.20.2</a>
+        
+        <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.19.1/" target="_blank">v1.19.1</a>
+        
+        <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.18.3/" target="_blank">v1.18.3</a>
+        
         <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.17.1/" target="_blank">v1.17.1</a>
+        
         <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.16.0/" target="_blank">v1.16.0</a>
+        
         <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.15.5/" target="_blank">v1.15.5</a>
+        
       </div>
     </li>
     <li class="nav-item">
@@ -209,6 +221,10 @@
             Copy Rows
           </a>
         </li><li>
+          <a href="/docs/extensions/custom-view/">
+            Custom View
+          </a>
+        </li><li>
           <a href="/docs/extensions/defer-url/">
             Defer URL
           </a>
@@ -308,6 +324,12 @@
           </a>
         </li></ul>
   </div><div class="bd-toc-item">
+    <a class="bd-toc-link" href="/docs/online-editor/">
+      Online Editor
+    </a>
+
+    <ul class="nav bd-sidenav"></ul>
+  </div><div class="bd-toc-item">
     <a class="bd-toc-link" href="/docs/faq/">
       FAQ
     </a>
@@ -349,12 +371,14 @@
 <li class="toc-entry toc-h3"><a href="#filtercontrol">filterControl</a></li>
 <li class="toc-entry toc-h3"><a href="#filtercontrolvisible">filterControlVisible</a></li>
 <li class="toc-entry toc-h3"><a href="#alignmentselectcontroloptions">alignmentSelectControlOptions</a></li>
-<li class="toc-entry toc-h3"><a href="#disablecontrolwhensearch">disableControlWhenSearch</a></li>
 <li class="toc-entry toc-h3"><a href="#filtercontrolcontainer">filterControlContainer</a></li>
 <li class="toc-entry toc-h3"><a href="#filterdatacollector">filterDataCollector</a></li>
-<li class="toc-entry toc-h3"><a href="#hideunusedselectoptions">hideUnusedSelectOptions</a></li>
+<li class="toc-entry toc-h3"><a href="#filtercontrolmultiplesearch">filterControlMultipleSearch</a></li>
+<li class="toc-entry toc-h3"><a href="#filtercontrolmultiplesearchdelimiter">filterControlMultipleSearchDelimiter</a></li>
+<li class="toc-entry toc-h3"><a href="#filtercontrolsearchclear">filterControlSearchClear</a></li>
 <li class="toc-entry toc-h3"><a href="#searchonenterkey">searchOnEnterKey</a></li>
 <li class="toc-entry toc-h3"><a href="#showfiltercontrolswitch">showFilterControlSwitch</a></li>
+<li class="toc-entry toc-h3"><a href="#sortselectoptions">sortSelectOptions</a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#column-options">Column options</a>
@@ -397,13 +421,22 @@
         
 
         <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content extensions" role="main">
-          <h1 class="bd-title" id="content">Table Filter Control</h1>
+          <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+            <a class="btn btn-sm btn-bd-light mb-2 mb-md-0"
+              
+              href="https://github.com/wenzhixin/bootstrap-table/blob/develop/site/docs/extensions/filter-control.md"
+              
+              title="View and edit this file on GitHub" target="_blank" rel="noopener">
+              View on GitHub
+            </a>
+            <h1 class="bd-title" id="content">
+              Table Filter Control
+            </h1>
+          </div>
           <p class="bd-lead">Table Filter Control extension of Bootstrap Table.</p>
           <div id="gg"></div>
 
-          <p>Dependence if you use the datepicker option: <a href="https://github.com/eternicode/bootstrap-datepicker">bootstrap-datepicker</a> v1.4.0</p>
-
-<h2 id="usage">Usage</h2>
+          <h2 id="usage">Usage</h2>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"extensions/filter-control/bootstrap-table-filter-control.css"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"extensions/filter-control/bootstrap-table-filter-control.js"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
@@ -464,29 +497,10 @@
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Set the alignment of the select control options. Use Use <code class="highlighter-rouge">left</code>, <code class="highlighter-rouge">right</code> or <code class="highlighter-rouge">auto</code>.</p>
+    <p>Set the alignment of the select control options. Use <code class="highlighter-rouge">left</code>, <code class="highlighter-rouge">right</code> or <code class="highlighter-rouge">auto</code>.</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">undefined</code></p>
-  </li>
-</ul>
-
-<h3 id="disablecontrolwhensearch">disableControlWhenSearch</h3>
-
-<ul>
-  <li>
-    <p><strong>Attribute:</strong> <code class="highlighter-rouge">data-disable-control-when-search</code></p>
-  </li>
-  <li>
-    <p><strong>type:</strong> <code class="highlighter-rouge">Boolean</code></p>
-  </li>
-  <li>
-    <p><strong>Detail:</strong></p>
-
-    <p>Set to true if you want to disable the control while the server is responding the data. This options will work if the sidePagination is ‘server’.</p>
-  </li>
-  <li>
-    <p><strong>Default:</strong> <code class="highlighter-rouge">false</code></p>
   </li>
 </ul>
 
@@ -502,8 +516,8 @@
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Set to e.g. <code class="highlighter-rouge">#filter</code> to allow custom input filter in a element with the id <code class="highlighter-rouge">filter</code>.
- Each filter element (input or select) must have the following class <code class="highlighter-rouge">bootstrap-table-filter-control-&lt;FieldName&gt;</code> (<FieldName> must be replaced with the defined [Field](https://bootstrap-table.com/docs/api/column-options/#field) name).</FieldName></p>
+    <p>Set to e.g. <code class="highlighter-rouge">#filter</code> to allow custom input filter in an element with the id <code class="highlighter-rouge">filter</code>.
+Each filter element (input or select) must have the following class <code class="highlighter-rouge">bootstrap-table-filter-control-&lt;FieldName&gt;</code> (<FieldName> must be replaced with the defined [Field](https://bootstrap-table.com/docs/api/column-options/#field) name).</FieldName></p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">false</code></p>
@@ -522,29 +536,68 @@
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Collect data which will added to the select filter, to filter through e.g. labels which are comma separated and displayed with a formatter.</p>
+    <p>Collect data which will added to the select filter, to filter through e.g. labels that are comma separated and displayed with a formatter.</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">undefined</code></p>
   </li>
 </ul>
 
-<h3 id="hideunusedselectoptions">hideUnusedSelectOptions</h3>
+<h3 id="filtercontrolmultiplesearch">filterControlMultipleSearch</h3>
 
 <ul>
   <li>
-    <p><strong>Attribute:</strong> <code class="highlighter-rouge">data-hide-unused-select-options</code></p>
+    <p><strong>Attribute:</strong> <code class="highlighter-rouge">data-filter-control-multiple-search</code></p>
   </li>
   <li>
-    <p><strong>type:</strong> <code class="highlighter-rouge">Boolean</code></p>
+    <p><strong>type:</strong> <code class="highlighter-rouge">bool</code></p>
   </li>
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Set to true in order to hide the options that are not in the table. This option does not work on server-side pagination.</p>
+    <p>Set to <code class="highlighter-rouge">true</code> to allow searching multiple values at once.
+The values will be split by a delimiter, see option <code class="highlighter-rouge">filterControlMultipleSearchDelimiter</code>.</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">false</code></p>
+  </li>
+</ul>
+
+<h3 id="filtercontrolmultiplesearchdelimiter">filterControlMultipleSearchDelimiter</h3>
+
+<ul>
+  <li>
+    <p><strong>Attribute:</strong> <code class="highlighter-rouge">data-filter-control-multiple-search-delimiter</code></p>
+  </li>
+  <li>
+    <p><strong>type:</strong> <code class="highlighter-rouge">String</code></p>
+  </li>
+  <li>
+    <p><strong>Detail:</strong></p>
+
+    <p>Defines the delimiter which will be used to split the search values in the option <code class="highlighter-rouge">filterControlMultipleSearchDelimiter</code>.</p>
+  </li>
+  <li>
+    <p><strong>Default:</strong> <code class="highlighter-rouge">,</code></p>
+  </li>
+</ul>
+
+<h3 id="filtercontrolsearchclear">filterControlSearchClear</h3>
+
+<ul>
+  <li>
+    <p><strong>Attribute:</strong> <code class="highlighter-rouge">data-filter-control-search-clear</code></p>
+  </li>
+  <li>
+    <p><strong>type:</strong> <code class="highlighter-rouge">bool</code></p>
+  </li>
+  <li>
+    <p><strong>Detail:</strong></p>
+
+    <p>Set to <code class="highlighter-rouge">true</code> to clear the filter control filters using the table option <a href="/docs/api/table-options/#showsearchbutton">showSearchButton</a>.</p>
+  </li>
+  <li>
+    <p><strong>Default:</strong> <code class="highlighter-rouge">true</code></p>
   </li>
 </ul>
 
@@ -560,7 +613,7 @@
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Set to true to fire the search action when the user press the enter key.</p>
+    <p>Set to <code class="highlighter-rouge">true</code> to fire the search action when the user presses the enter key.</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">false</code></p>
@@ -586,6 +639,25 @@
   </li>
 </ul>
 
+<h3 id="sortselectoptions">sortSelectOptions</h3>
+
+<ul>
+  <li>
+    <p><strong>Attribute:</strong> <code class="highlighter-rouge">data-sort-select-options</code></p>
+  </li>
+  <li>
+    <p><strong>type:</strong> <code class="highlighter-rouge">Boolean</code></p>
+  </li>
+  <li>
+    <p><strong>Detail:</strong></p>
+
+    <p>Set to <code class="highlighter-rouge">true</code> to sort the option elements of the select control.</p>
+  </li>
+  <li>
+    <p><strong>Default:</strong> <code class="highlighter-rouge">false</code></p>
+  </li>
+</ul>
+
 <h2 id="column-options">Column options</h2>
 
 <h3 id="filtercontrol-1">filterControl</h3>
@@ -600,7 +672,7 @@
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Set <code class="highlighter-rouge">input</code>: show an input control, <code class="highlighter-rouge">select</code>: show a select control, <code class="highlighter-rouge">datepicker</code>: show a datepicker control.</p>
+    <p>Set <code class="highlighter-rouge">input</code>: show an input control, <code class="highlighter-rouge">select</code>: show a select control, <code class="highlighter-rouge">datepicker</code>: show a html5 datepicker control.</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">undefined</code></p>
@@ -619,7 +691,7 @@
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Set this in order to show a placeholder only in the input filter control.</p>
+    <p>Set this to show a placeholder only in the input filter control.</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">''</code></p>
@@ -638,18 +710,18 @@
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>The custom search function is executed instead of built-in search function, takes four parameters:</p>
+    <p>The custom search function is executed instead of the built-in search function and takes four parameters:</p>
 
     <ul>
       <li><code class="highlighter-rouge">text</code>: the search text.</li>
-      <li><code class="highlighter-rouge">value</code>: the the value of the column to compare.</li>
+      <li><code class="highlighter-rouge">value</code>: the value of the column to compare.</li>
       <li><code class="highlighter-rouge">field</code>: the column field name.</li>
       <li><code class="highlighter-rouge">data</code>: the table data.</li>
     </ul>
 
     <p>Return <code class="highlighter-rouge">false</code> to filter out the current column/row.
- Return <code class="highlighter-rouge">true</code> to not filter out the current column/row.
- Return <code class="highlighter-rouge">null</code> to skip the custom search for the current value.</p>
+Return <code class="highlighter-rouge">true</code> to not filter out the current column/row.
+Return <code class="highlighter-rouge">null</code> to skip the custom search for the current value.</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">undefined</code></p>
@@ -669,11 +741,11 @@
     <p><strong>Detail:</strong></p>
 
     <p>Set custom select filter values, use
- <code class="highlighter-rouge">var:variable</code> to load from a variable
- <code class="highlighter-rouge">obj:variable.key</code> to load from a object
- <code class="highlighter-rouge">url:http://www.example.com/data.json</code> to load from a remote json file
- <code class="highlighter-rouge">json:{key:data}</code> to load from a json string.
- <code class="highlighter-rouge">func:functionName</code> to load from a function.</p>
+<code class="highlighter-rouge">var:variable</code> to load from a variable
+<code class="highlighter-rouge">obj:variable.key</code> to load from an object
+<code class="highlighter-rouge">url:http://www.example.com/data.json</code> to load from a remote JSON file
+<code class="highlighter-rouge">json:{key:data}</code> to load from a JSON string.
+<code class="highlighter-rouge">func:functionName</code> to load from a function.</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">undefined</code></p>
@@ -692,7 +764,7 @@
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>If the datepicker option is set use this option to configure the datepicker with the native options. Use this way: <code class="highlighter-rouge">data-filter-datepicker-options='{"autoclose":true, "clearBtn": true, "todayHighlight": true}'</code>.</p>
+    <p>If the datepicker option is set use this option to configure the datepicker with the native options. Use this way: <code class="highlighter-rouge">data-filter-datepicker-options='{"max":value1, "min": value2, "step": value3}'</code>. For more information visit this <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date">documentation</a></p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">undefined</code></p>
@@ -712,8 +784,6 @@
     <p><strong>Detail:</strong></p>
 
     <p>Set the default value of the filter.</p>
-
-    <p>If you use the datepicker, make sure your date format match the <a href="https://bootstrap-datepicker.readthedocs.io/en/stable/options.html?highlight=format#format">format</a> of the datepicker. You can change the datepicker format using <a href="https://bootstrap-table.com/docs/extensions/filter-control/#filterdatepickeroptions">filterDatepickerOptions</a>.</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">undefined</code></p>
@@ -751,7 +821,7 @@
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Set to true if you want to use the starts with search mode.</p>
+    <p>Set to <code class="highlighter-rouge">true</code> if you want to use the starts with search mode.</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">false</code></p>
@@ -770,7 +840,7 @@
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>Set to true if you want to use the strict search mode.</p>
+    <p>Set to <code class="highlighter-rouge">true</code> if you want to use the strict search mode.</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">false</code></p>
@@ -810,7 +880,7 @@
 <h3 id="clearfiltercontrol">clearFilterControl</h3>
 
 <ul>
-  <li>Clear all the controls added by this plugin (similar to showSearchClearButton option).</li>
+  <li>Clear all the controls added by this plugin (similar to <code class="highlighter-rouge">showSearchClearButton</code> option).</li>
 </ul>
 
 <h3 id="togglefiltercontrol">toggleFilterControl</h3>
@@ -869,9 +939,9 @@
       </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script><script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 <script>
 $(function () {

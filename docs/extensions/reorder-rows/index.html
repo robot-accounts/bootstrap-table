@@ -12,13 +12,13 @@
 
 <title>Table Reorder Rows · Bootstrap Table</title>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><!-- Documentation extras -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"><!-- Documentation extras -->
 
-<link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
 
 
-<link href="/assets/css/docs.min.css" rel="stylesheet">
-<link href="/assets/css/style.css?m=7" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/docs.min.css">
+<link rel="stylesheet" href="/assets/css/style.css?m=9">
 
 <!-- Favicons -->
 <link rel="icon" href="/favicon.png">
@@ -89,13 +89,25 @@
   <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
     <li class="nav-item dropdown">
       <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        v1.18.2
+        v1.23.5
       </a>
       <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions">
-        <a class="dropdown-item active" href="/">Latest (1.18.2)</a>
+        <a class="dropdown-item active" href="/">Latest (1.23.5)</a>
+        
+        <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.21.4/" target="_blank">v1.21.4</a>
+        
+        <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.20.2/" target="_blank">v1.20.2</a>
+        
+        <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.19.1/" target="_blank">v1.19.1</a>
+        
+        <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.18.3/" target="_blank">v1.18.3</a>
+        
         <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.17.1/" target="_blank">v1.17.1</a>
+        
         <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.16.0/" target="_blank">v1.16.0</a>
+        
         <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.15.5/" target="_blank">v1.15.5</a>
+        
       </div>
     </li>
     <li class="nav-item">
@@ -209,6 +221,10 @@
             Copy Rows
           </a>
         </li><li>
+          <a href="/docs/extensions/custom-view/">
+            Custom View
+          </a>
+        </li><li>
           <a href="/docs/extensions/defer-url/">
             Defer URL
           </a>
@@ -308,6 +324,12 @@
           </a>
         </li></ul>
   </div><div class="bd-toc-item">
+    <a class="bd-toc-link" href="/docs/online-editor/">
+      Online Editor
+    </a>
+
+    <ul class="nav bd-sidenav"></ul>
+  </div><div class="bd-toc-item">
     <a class="bd-toc-link" href="/docs/faq/">
       FAQ
     </a>
@@ -347,6 +369,8 @@
 <li class="toc-entry toc-h2"><a href="#options">Options</a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#reorderablerows">reorderableRows</a></li>
+<li class="toc-entry toc-h3"><a href="#onallowdrop">onAllowDrop</a></li>
+<li class="toc-entry toc-h3"><a href="#ondragstop">onDragStop</a></li>
 <li class="toc-entry toc-h3"><a href="#ondragstyle">onDragStyle</a></li>
 <li class="toc-entry toc-h3"><a href="#ondragclass">onDragClass</a></li>
 <li class="toc-entry toc-h3"><a href="#ondropstyle">onDropStyle</a></li>
@@ -366,7 +390,18 @@
         
 
         <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content extensions" role="main">
-          <h1 class="bd-title" id="content">Table Reorder Rows</h1>
+          <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+            <a class="btn btn-sm btn-bd-light mb-2 mb-md-0"
+              
+              href="https://github.com/wenzhixin/bootstrap-table/blob/develop/site/docs/extensions/reorder-rows.md"
+              
+              title="View and edit this file on GitHub" target="_blank" rel="noopener">
+              View on GitHub
+            </a>
+            <h1 class="bd-title" id="content">
+              Table Reorder Rows
+            </h1>
+          </div>
           <p class="bd-lead">Table Reorder Rows extension of Bootstrap Table.</p>
           <div id="gg"></div>
 
@@ -405,6 +440,52 @@
   </li>
 </ul>
 
+<h3 id="onallowdrop">onAllowDrop</h3>
+
+<ul>
+  <li>
+    <p><strong>attribute:</strong> <code class="highlighter-rouge">data-on-allow-drop</code></p>
+  </li>
+  <li>
+    <p><strong>type:</strong> <code class="highlighter-rouge">function</code></p>
+  </li>
+  <li>
+    <p><strong>Detail:</strong></p>
+
+    <p>Pass a function that will be called as a row over another row. If the function returns true, allow dropping on that row, otherwise not. The function takes 4 parameters:</p>
+    <ul>
+      <li>the dragged-row data</li>
+      <li>the data of the row under the cursor</li>
+      <li>the dragged row</li>
+      <li>the row under the cursor</li>
+    </ul>
+
+    <p>It returns a boolean: true allows the drop, false doesn’t allow it.</p>
+  </li>
+  <li>
+    <p><strong>Default:</strong> <code class="highlighter-rouge">null</code></p>
+  </li>
+</ul>
+
+<h3 id="ondragstop">onDragStop</h3>
+
+<ul>
+  <li>
+    <p><strong>attribute:</strong> <code class="highlighter-rouge">data-on-drag-stop</code></p>
+  </li>
+  <li>
+    <p><strong>type:</strong> <code class="highlighter-rouge">function</code></p>
+  </li>
+  <li>
+    <p><strong>Detail:</strong></p>
+
+    <p>Pass a function that will be called when the user stops dragging regardless of if the rows have been rearranged. The function takes 3 parameters: the table, the row data and the row which the user was dragging.</p>
+  </li>
+  <li>
+    <p><strong>Default:</strong> <code class="highlighter-rouge">null</code></p>
+  </li>
+</ul>
+
 <h3 id="ondragstyle">onDragStyle</h3>
 
 <ul>
@@ -439,7 +520,7 @@
     <p>This class is added for the duration of the drag and then removed when the row is dropped. It is more flexible than using onDragStyle since it can be inherited by the row cells and other content.</p>
   </li>
   <li>
-    <p><strong>Default:</strong> <code class="highlighter-rouge">reorder_rows_onDragClass</code></p>
+    <p><strong>Default:</strong> <code class="highlighter-rouge">reorder-rows-on-drag-class</code></p>
   </li>
 </ul>
 
@@ -455,7 +536,7 @@
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>This is the style that is assigned to the row when it is dropped. As for onDragStyle, there are limitations to what you can do. Also this replaces the original style, so again consider using onDragClass which is simply added and then removed on drop.</p>
+    <p>This is the style that is assigned to the row when it is dropped. As for onDragStyle, there are limitations to what you can do. Also, this replaces the original style, so again consider using onDragClass which is simply added and then removed on drop.</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">null</code></p>
@@ -517,7 +598,7 @@
     <p><strong>Note: This option is mainly used to adapt to the <code class="highlighter-rouge">TableDnD</code> plugin. Under no special circumstances, please do not modify the default value.</strong></p>
   </li>
   <li>
-    <p><strong>Default:</strong> <code class="highlighter-rouge">&gt;tbody&gt;tr&gt;td</code></p>
+    <p><strong>Default:</strong> <code class="highlighter-rouge">&gt;tbody&gt;tr&gt;td:not(.bs-checkbox)</code></p>
   </li>
 </ul>
 
@@ -533,7 +614,7 @@
   <li>
     <p><strong>Detail:</strong></p>
 
-    <p>This function must be use if your <code class="highlighter-rouge">tr</code> elements won’t have the <code class="highlighter-rouge">id</code> attribute. If your <code class="highlighter-rouge">tr</code> elements don’t have the <code class="highlighter-rouge">id</code> attribute this plugin don’t fire the onDrop event.</p>
+    <p>This function must be used if your <code class="highlighter-rouge">tr</code> elements won’t have the <code class="highlighter-rouge">id</code> attribute. If your <code class="highlighter-rouge">tr</code> elements don’t have the <code class="highlighter-rouge">id</code> attribute this plugin doesn’t fire the onDrop event.</p>
   </li>
   <li>
     <p><strong>Default:</strong> <code class="highlighter-rouge">false</code></p>
@@ -555,9 +636,9 @@
       </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script><script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 <script>
 $(function () {
